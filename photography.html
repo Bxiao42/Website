@@ -9,12 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            min-height: 200vh; /* 确保有足够滚动空间 */
+            min-height: 200vh; /* Ensure there is enough scroll space */
         }
 
         /* 背景视频 */
         #background-video {
-            position: fixed; /* 改为 fixed 避免滚动空白 */
+            position: fixed; /* Change to fixed to avoid scrolling blank space */
             top: 0;
             left: 0;
             width: 100%;
@@ -23,14 +23,14 @@
             z-index: -1;
         }
 
-        /* 主要内容容器 */
+        /* Main content container */
         main {
             position: relative;
-            z-index: 1; /* 确保内容在视频上层 */
+            z-index: 1; /* Ensure content is on top of the video. */
             padding: 40px 20px;
         }
 
-        /* 照片组 */
+        /* pictures group*/
         .photo-group {
             opacity: 0;
             transform: translateY(50px);
@@ -68,7 +68,7 @@
 </video>
 
 <main>
-    <!-- 照片组1 -->
+    <!-- picture1 -->
     <div class="photo-group" id="group1">
         <div class="photo-description">DALI CHINA｜2025</div>
         <img src="your-photo1.jpg">
@@ -77,35 +77,35 @@
         <img src="your-photo4.jpg">
     </div>
 
-    <!-- 照片组2 -->
+    <!-- picture2 -->
     <div class="photo-group" id="group2">
         <div class="photo-description">LIJIANG CHINA｜2025</div>
         <img src="your-photo5.jpg">
         <img src="your-photo6.jpg">
     </div>
 
-    <!-- 照片组3 -->
+    <!-- picture3 -->
     <div class="photo-group" id="group3">
         <div class="photo-description">JINAN CHINA｜2024</div>
         <img src="your-photo7.jpg">
         <img src="your-photo12.jpg">
     </div>
 
-    <!-- 照片组4 -->
+    <!-- picture4 -->
     <div class="photo-group" id="group3">
         <div class="photo-description">TORONTO CANADA｜2024</div>
         <img src="your-photo8.jpg">
         <img src="your-photo9.jpg">
     </div>
 
-    <!-- 照片组5 -->
+    <!-- picture5 -->
     <div class="photo-group" id="group3">
         <div class="photo-description">LONDON CANADA｜2024</div>
         <img src="your-photo10.jpg">
         <img src="your-photo13.jpg">
     </div>
 
-       <!-- 照片组5 -->
+       <!-- picture6 -->
        <div class="photo-group" id="group3">
         <div class="photo-description">SHENYANG CHINA｜2024</div>
         <img src="your-photo11.jpg">
@@ -114,7 +114,6 @@
 <main>
 
 <script>
-    // 优化后的滚动检测逻辑
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -122,16 +121,14 @@
             }
         });
     }, {
-        threshold: 0.2, // 当元素20%进入视口时触发
-        rootMargin: '0px 0px -100px 0px' // 底部提前100px检测
+        threshold: 0.2, 
+        rootMargin: '0px 0px -100px 0px'
     });
 
-    // 自动观察所有照片组
     document.querySelectorAll('.photo-group').forEach(group => {
         observer.observe(group);
     });
 
-    // 确保视频自动播放
     document.addEventListener('DOMContentLoaded', () => {
         const video = document.getElementById('background-video');
         video.play().catch(() => {
