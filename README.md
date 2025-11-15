@@ -17,11 +17,7 @@ The website includes:
 Only the **MY PHOTOGRAPHY COLLECTION** works directly in the online website.
 
 Other interactive or functional projects—such as:
-- **Chinese-Chess-Learning-System
-** 
-- or any project requiring **Java / Spring Boot / local backend**
-- or programs that need **engine execution**
-
+Any project requiring **Java / Spring Boot / local backend** or programs that need **engine execution**
 cannot be run through GitHub Pages because they require a **backend server**.
 
 ### To use those projects, please visit my GitHub profile and download the corresponding repository:
